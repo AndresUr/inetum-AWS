@@ -1,0 +1,32 @@
+[2025-02-11T14:48:55.963+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-11T14:48:55.999+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_ETL_glue.run_glue_crawler manual__2025-02-11T14:48:50.804942+00:00 [queued]>
+[2025-02-11T14:48:56.015+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_ETL_glue.run_glue_crawler manual__2025-02-11T14:48:50.804942+00:00 [queued]>
+[2025-02-11T14:48:56.016+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-11T14:48:56.041+0000] {taskinstance.py:2327} INFO - Executing <Task(GlueCrawlerOperator): run_glue_crawler> on 2025-02-11 14:48:50.804942+00:00
+[2025-02-11T14:48:56.054+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1034) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-11T14:48:56.059+0000] {standard_task_runner.py:63} INFO - Started process 1037 to run task
+[2025-02-11T14:48:56.058+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_ETL_glue', 'run_glue_crawler', 'manual__2025-02-11T14:48:50.804942+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpifby3ufk']
+[2025-02-11T14:48:56.064+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask run_glue_crawler
+[2025-02-11T14:48:56.158+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_ETL_glue.run_glue_crawler manual__2025-02-11T14:48:50.804942+00:00 [running]> on host 9a237c96c334
+[2025-02-11T14:48:56.357+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_ETL_glue' AIRFLOW_CTX_TASK_ID='run_glue_crawler' AIRFLOW_CTX_EXECUTION_DATE='2025-02-11T14:48:50.804942+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-11T14:48:50.804942+00:00'
+[2025-02-11T14:48:56.362+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-11T14:48:56.364+0000] {glue_crawler.py:57} INFO - Checking if crawler already exists: crawler-oregon-source-s3
+[2025-02-11T14:48:56.386+0000] {base.py:84} INFO - Using connection ID 'aws_default' for task execution.
+[2025-02-11T14:48:56.388+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-02-11T14:48:58.408+0000] {glue_crawler.py:98} INFO - Triggering AWS Glue Crawler
+[2025-02-11T14:48:58.410+0000] {glue_crawler.py:170} INFO - Starting crawler crawler-oregon-source-s3
+[2025-02-11T14:48:58.921+0000] {glue_crawler.py:110} INFO - Waiting for AWS Glue Crawler
+[2025-02-11T14:51:52.837+0000] {glue_crawler.py:185} INFO - crawler_config: {'Name': 'crawler-oregon-source-s3', 'Role': 'service-role/AWSGlueServiceRole-s3-fullacces-glue-au', 'Targets': {'S3Targets': [{'Path': 's3://cloudcamp-source-oregon-au', 'Exclusions': []}], 'JdbcTargets': [], 'MongoDBTargets': [], 'DynamoDBTargets': [], 'CatalogTargets': [], 'DeltaTargets': [], 'IcebergTargets': [], 'HudiTargets': []}, 'DatabaseName': 'dbordegon-sources3', 'Description': 'crawler source s3', 'Classifiers': [], 'RecrawlPolicy': {'RecrawlBehavior': 'CRAWL_EVERYTHING'}, 'SchemaChangePolicy': {'UpdateBehavior': 'UPDATE_IN_DATABASE', 'DeleteBehavior': 'DEPRECATE_IN_DATABASE'}, 'LineageConfiguration': {'CrawlerLineageSettings': 'DISABLE'}, 'State': 'READY', 'CrawlElapsedTime': 0, 'CreationTime': datetime.datetime(2025, 2, 11, 4, 14, 20, tzinfo=tzlocal()), 'LastUpdated': datetime.datetime(2025, 2, 11, 4, 14, 20, tzinfo=tzlocal()), 'LastCrawl': {'Status': 'SUCCEEDED', 'LogGroup': '/aws-glue/crawlers', 'LogStream': 'crawler-oregon-source-s3', 'MessagePrefix': '08b05ae8-b8e3-4b26-83f2-cfd4c7fbe48e', 'StartTime': datetime.datetime(2025, 2, 11, 14, 48, 58, tzinfo=tzlocal())}, 'Version': 1, 'Configuration': '{"Version":1.0,"CreatePartitionIndex":true}', 'LakeFormationConfiguration': {'UseLakeFormationCredentials': False, 'AccountId': ''}}
+[2025-02-11T14:51:53.039+0000] {glue_crawler.py:190} INFO - Status: SUCCEEDED
+[2025-02-11T14:51:53.041+0000] {glue_crawler.py:191} INFO - Last Runtime Duration (seconds): 64.354
+[2025-02-11T14:51:53.044+0000] {glue_crawler.py:192} INFO - Median Runtime Duration (seconds): 64.1935
+[2025-02-11T14:51:53.046+0000] {glue_crawler.py:193} INFO - Tables Created: 0
+[2025-02-11T14:51:53.047+0000] {glue_crawler.py:194} INFO - Tables Updated: 0
+[2025-02-11T14:51:53.049+0000] {glue_crawler.py:195} INFO - Tables Deleted: 0
+[2025-02-11T14:51:53.051+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-11T14:51:53.097+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=DAG_ETL_glue, task_id=run_glue_crawler, execution_date=20250211T144850, start_date=20250211T144856, end_date=20250211T145153
+[2025-02-11T14:51:53.131+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-02-11T14:51:53.155+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-11T14:51:53.159+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

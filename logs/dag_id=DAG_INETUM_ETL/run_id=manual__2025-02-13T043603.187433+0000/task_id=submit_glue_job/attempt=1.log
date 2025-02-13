@@ -1,0 +1,48 @@
+[2025-02-13T04:39:50.194+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-13T04:39:50.239+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:36:03.187433+00:00 [queued]>
+[2025-02-13T04:39:50.256+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:36:03.187433+00:00 [queued]>
+[2025-02-13T04:39:50.257+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-13T04:39:50.284+0000] {taskinstance.py:2327} INFO - Executing <Task(GlueJobOperator): submit_glue_job> on 2025-02-13 04:36:03.187433+00:00
+[2025-02-13T04:39:50.296+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4424) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-13T04:39:50.299+0000] {standard_task_runner.py:63} INFO - Started process 4426 to run task
+[2025-02-13T04:39:50.299+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_INETUM_ETL', 'submit_glue_job', 'manual__2025-02-13T04:36:03.187433+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp3_yftlt1']
+[2025-02-13T04:39:50.301+0000] {standard_task_runner.py:91} INFO - Job 73: Subtask submit_glue_job
+[2025-02-13T04:39:50.396+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:36:03.187433+00:00 [running]> on host 9a237c96c334
+[2025-02-13T04:39:50.683+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_INETUM_ETL' AIRFLOW_CTX_TASK_ID='submit_glue_job' AIRFLOW_CTX_EXECUTION_DATE='2025-02-13T04:36:03.187433+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-13T04:36:03.187433+00:00'
+[2025-02-13T04:39:50.686+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-13T04:39:50.687+0000] {glue.py:173} INFO - Initializing AWS Glue Job: inetum_job. Wait for completion: True
+[2025-02-13T04:39:50.688+0000] {glue.py:356} INFO - Checking if job already exists: inetum_job
+[2025-02-13T04:39:50.704+0000] {base.py:84} INFO - Using connection ID 'aws_default' for task execution.
+[2025-02-13T04:39:50.705+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-02-13T04:39:53.494+0000] {glue.py:189} ERROR - Failed to run aws glue job, error: An error occurred (ConcurrentRunsExceededException) when calling the StartJobRun operation: Concurrent runs exceeded.
+[2025-02-13T04:39:53.496+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-13T04:39:53.498+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/amazon/aws/operators/glue.py", line 178, in execute
+    glue_job_run = self.glue_job_hook.initialize_job(self.script_args, self.run_job_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/amazon/aws/hooks/glue.py", line 187, in initialize_job
+    return self.conn.start_job_run(JobName=job_name, Arguments=script_arguments, **run_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 553, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 1009, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ConcurrentRunsExceededException: An error occurred (ConcurrentRunsExceededException) when calling the StartJobRun operation: Concurrent runs exceeded.
+[2025-02-13T04:39:53.544+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=DAG_INETUM_ETL, task_id=submit_glue_job, execution_date=20250213T043603, start_date=20250213T043950, end_date=20250213T043953
+[2025-02-13T04:39:53.603+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 73 for task submit_glue_job (An error occurred (ConcurrentRunsExceededException) when calling the StartJobRun operation: Concurrent runs exceeded.; 4426)
+[2025-02-13T04:39:53.653+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-02-13T04:39:53.738+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-13T04:39:53.742+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

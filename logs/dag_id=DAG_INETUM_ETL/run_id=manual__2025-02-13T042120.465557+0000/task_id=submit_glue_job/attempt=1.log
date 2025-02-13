@@ -1,0 +1,77 @@
+[2025-02-13T04:25:07.937+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-13T04:25:07.970+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:21:20.465557+00:00 [queued]>
+[2025-02-13T04:25:07.986+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:21:20.465557+00:00 [queued]>
+[2025-02-13T04:25:07.987+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-13T04:25:08.014+0000] {taskinstance.py:2327} INFO - Executing <Task(GlueJobOperator): submit_glue_job> on 2025-02-13 04:21:20.465557+00:00
+[2025-02-13T04:25:08.025+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4209) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-13T04:25:08.029+0000] {standard_task_runner.py:63} INFO - Started process 4211 to run task
+[2025-02-13T04:25:08.031+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_INETUM_ETL', 'submit_glue_job', 'manual__2025-02-13T04:21:20.465557+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpo4_4h_8y']
+[2025-02-13T04:25:08.033+0000] {standard_task_runner.py:91} INFO - Job 61: Subtask submit_glue_job
+[2025-02-13T04:25:08.122+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-13T04:21:20.465557+00:00 [running]> on host 9a237c96c334
+[2025-02-13T04:25:08.322+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_INETUM_ETL' AIRFLOW_CTX_TASK_ID='submit_glue_job' AIRFLOW_CTX_EXECUTION_DATE='2025-02-13T04:21:20.465557+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-13T04:21:20.465557+00:00'
+[2025-02-13T04:25:08.325+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-13T04:25:08.326+0000] {glue.py:173} INFO - Initializing AWS Glue Job: inetum_job. Wait for completion: True
+[2025-02-13T04:25:08.327+0000] {glue.py:356} INFO - Checking if job already exists: inetum_job
+[2025-02-13T04:25:08.346+0000] {base.py:84} INFO - Using connection ID 'aws_default' for task execution.
+[2025-02-13T04:25:08.348+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-02-13T04:25:10.549+0000] {glue.py:194} INFO - You can monitor this Glue Job run at: https://console.aws.amazon.com/gluestudio/home?region=us-west-2#/job/inetum_job/run/jr_d46a1b023f7cafd20cbb139d104e44f6ed81fbb4df8dd18618e5072e7d3733a7
+[2025-02-13T04:25:10.752+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:16.991+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:23.220+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:29.434+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:35.685+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:41.913+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:48.144+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:25:54.362+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:00.634+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:06.883+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:13.125+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:19.367+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:25.616+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:31.856+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:38.094+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:44.320+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:50.680+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:26:56.924+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:03.137+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:09.361+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:15.586+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:21.832+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:28.085+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:34.317+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:40.547+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:46.752+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:52.982+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:27:59.206+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:05.417+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:11.633+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:17.866+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:24.101+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:30.381+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:36.617+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:42.842+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:49.095+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:28:55.335+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:01.578+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:07.812+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:14.059+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:20.287+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:26.517+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:32.733+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:39.020+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:45.243+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:51.492+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:29:57.718+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:30:03.941+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:30:10.174+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:30:16.416+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:30:22.641+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-13T04:30:28.871+0000] {glue.py:332} INFO - Exiting Job jr_d46a1b023f7cafd20cbb139d104e44f6ed81fbb4df8dd18618e5072e7d3733a7 Run State: SUCCEEDED
+[2025-02-13T04:30:28.871+0000] {glue.py:209} INFO - AWS Glue Job: inetum_job status: SUCCEEDED. Run Id: jr_d46a1b023f7cafd20cbb139d104e44f6ed81fbb4df8dd18618e5072e7d3733a7
+[2025-02-13T04:30:28.872+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-13T04:30:28.904+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=DAG_INETUM_ETL, task_id=submit_glue_job, execution_date=20250213T042120, start_date=20250213T042507, end_date=20250213T043028
+[2025-02-13T04:30:28.949+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-02-13T04:30:28.975+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-13T04:30:28.978+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

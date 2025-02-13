@@ -1,0 +1,38 @@
+[2025-02-11T14:16:56.474+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-11T14:16:56.498+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_ETL_glue.submit_glue_job manual__2025-02-11T14:16:48.254654+00:00 [queued]>
+[2025-02-11T14:16:56.511+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_ETL_glue.submit_glue_job manual__2025-02-11T14:16:48.254654+00:00 [queued]>
+[2025-02-11T14:16:56.512+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-11T14:16:56.539+0000] {taskinstance.py:2327} INFO - Executing <Task(GlueJobOperator): submit_glue_job> on 2025-02-11 14:16:48.254654+00:00
+[2025-02-11T14:16:56.550+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=645) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-11T14:16:56.553+0000] {standard_task_runner.py:63} INFO - Started process 647 to run task
+[2025-02-11T14:16:56.553+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_ETL_glue', 'submit_glue_job', 'manual__2025-02-11T14:16:48.254654+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpb11z5rz6']
+[2025-02-11T14:16:56.558+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask submit_glue_job
+[2025-02-11T14:16:56.636+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_ETL_glue.submit_glue_job manual__2025-02-11T14:16:48.254654+00:00 [running]> on host 9a237c96c334
+[2025-02-11T14:16:56.781+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_ETL_glue' AIRFLOW_CTX_TASK_ID='submit_glue_job' AIRFLOW_CTX_EXECUTION_DATE='2025-02-11T14:16:48.254654+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-11T14:16:48.254654+00:00'
+[2025-02-11T14:16:56.785+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-11T14:16:56.786+0000] {glue.py:173} INFO - Initializing AWS Glue Job: etloregon. Wait for completion: True
+[2025-02-11T14:16:56.787+0000] {glue.py:356} INFO - Checking if job already exists: etloregon
+[2025-02-11T14:16:56.803+0000] {base.py:84} INFO - Using connection ID 'aws_default' for task execution.
+[2025-02-11T14:16:56.805+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-02-11T14:16:59.299+0000] {glue.py:194} INFO - You can monitor this Glue Job run at: https://console.aws.amazon.com/gluestudio/home?region=us-west-2#/job/etloregon/run/jr_ccc25b6b971fa61337b2a4ef300800c71f2311289be02fa2499f1e4472337f58
+[2025-02-11T14:16:59.500+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:05.716+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:11.946+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:18.163+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:24.416+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:30.638+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:36.858+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:43.085+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:49.327+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:17:55.557+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:18:01.780+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:18:08.026+0000] {glue.py:339} INFO - Polling for AWS Glue Job etloregon current run state with status RUNNING
+[2025-02-11T14:18:14.221+0000] {glue.py:332} INFO - Exiting Job jr_ccc25b6b971fa61337b2a4ef300800c71f2311289be02fa2499f1e4472337f58 Run State: SUCCEEDED
+[2025-02-11T14:18:14.222+0000] {glue.py:209} INFO - AWS Glue Job: etloregon status: SUCCEEDED. Run Id: jr_ccc25b6b971fa61337b2a4ef300800c71f2311289be02fa2499f1e4472337f58
+[2025-02-11T14:18:14.223+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-11T14:18:14.254+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=DAG_ETL_glue, task_id=submit_glue_job, execution_date=20250211T141648, start_date=20250211T141656, end_date=20250211T141814
+[2025-02-11T14:18:14.318+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-02-11T14:18:14.344+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-11T14:18:14.347+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

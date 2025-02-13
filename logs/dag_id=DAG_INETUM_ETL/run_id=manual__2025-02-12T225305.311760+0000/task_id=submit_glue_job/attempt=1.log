@@ -1,0 +1,95 @@
+[2025-02-12T22:57:37.426+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-12T22:57:37.471+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-12T22:53:05.311760+00:00 [queued]>
+[2025-02-12T22:57:37.490+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-12T22:53:05.311760+00:00 [queued]>
+[2025-02-12T22:57:37.492+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-12T22:57:37.535+0000] {taskinstance.py:2327} INFO - Executing <Task(GlueJobOperator): submit_glue_job> on 2025-02-12 22:53:05.311760+00:00
+[2025-02-12T22:57:37.548+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=188) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-12T22:57:37.551+0000] {standard_task_runner.py:63} INFO - Started process 190 to run task
+[2025-02-12T22:57:37.552+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_INETUM_ETL', 'submit_glue_job', 'manual__2025-02-12T22:53:05.311760+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp081l1u5s']
+[2025-02-12T22:57:37.554+0000] {standard_task_runner.py:91} INFO - Job 47: Subtask submit_glue_job
+[2025-02-12T22:57:37.646+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_INETUM_ETL.submit_glue_job manual__2025-02-12T22:53:05.311760+00:00 [running]> on host 9a237c96c334
+[2025-02-12T22:57:37.849+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_INETUM_ETL' AIRFLOW_CTX_TASK_ID='submit_glue_job' AIRFLOW_CTX_EXECUTION_DATE='2025-02-12T22:53:05.311760+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-12T22:53:05.311760+00:00'
+[2025-02-12T22:57:37.852+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-12T22:57:37.853+0000] {glue.py:173} INFO - Initializing AWS Glue Job: inetum_job. Wait for completion: True
+[2025-02-12T22:57:37.855+0000] {glue.py:356} INFO - Checking if job already exists: inetum_job
+[2025-02-12T22:57:37.882+0000] {base.py:84} INFO - Using connection ID 'aws_default' for task execution.
+[2025-02-12T22:57:37.884+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-02-12T22:57:40.460+0000] {glue.py:194} INFO - You can monitor this Glue Job run at: https://console.aws.amazon.com/gluestudio/home?region=us-west-2#/job/inetum_job/run/jr_896eacbfb5a32ca8b001aa1ade6dc03415656233be6873d9713d006eb2e2cafd
+[2025-02-12T22:57:40.658+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:57:46.909+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:57:53.114+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:57:59.328+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:05.549+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:12.086+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:18.314+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:24.548+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:30.784+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:37.007+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:43.231+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:49.440+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:58:55.655+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:01.873+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:08.096+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:14.413+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:20.646+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:26.889+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:33.112+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:39.324+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:45.546+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:51.772+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T22:59:57.999+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:04.214+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:10.447+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:16.659+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:22.914+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:29.112+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:35.314+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:41.538+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:47.779+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:00:54.002+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:00.197+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:06.419+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:12.643+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:18.867+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:25.099+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:34.659+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:40.879+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:47.080+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:53.301+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:01:59.516+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:05.751+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:11.987+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:18.343+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:24.545+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:30.762+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:36.970+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:43.180+0000] {glue.py:339} INFO - Polling for AWS Glue Job inetum_job current run state with status RUNNING
+[2025-02-12T23:02:49.379+0000] {glue.py:336} INFO - Exiting Job jr_896eacbfb5a32ca8b001aa1ade6dc03415656233be6873d9713d006eb2e2cafd Run State: FAILED
+[2025-02-12T23:02:49.379+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-12T23:02:49.407+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/amazon/aws/operators/glue.py", line 208, in execute
+    glue_job_run = self.glue_job_hook.job_completion(self.job_name, self._job_run_id, self.verbose)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/amazon/aws/hooks/glue.py", line 288, in job_completion
+    ret = self._handle_state(job_run_state, job_name, run_id, verbose, next_log_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/amazon/aws/hooks/glue.py", line 337, in _handle_state
+    raise AirflowException(job_error_message)
+airflow.exceptions.AirflowException: Exiting Job jr_896eacbfb5a32ca8b001aa1ade6dc03415656233be6873d9713d006eb2e2cafd Run State: FAILED
+[2025-02-12T23:02:49.421+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=DAG_INETUM_ETL, task_id=submit_glue_job, execution_date=20250212T225305, start_date=20250212T225737, end_date=20250212T230249
+[2025-02-12T23:02:49.459+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 47 for task submit_glue_job (Exiting Job jr_896eacbfb5a32ca8b001aa1ade6dc03415656233be6873d9713d006eb2e2cafd Run State: FAILED; 190)
+[2025-02-12T23:02:49.524+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-02-12T23:02:49.568+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-12T23:02:49.571+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

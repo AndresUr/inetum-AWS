@@ -1,0 +1,43 @@
+[2025-02-11T17:13:29.770+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-11T17:13:29.808+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.load_data_task manual__2025-02-11T17:08:00.921612+00:00 [queued]>
+[2025-02-11T17:13:29.828+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.load_data_task manual__2025-02-11T17:08:00.921612+00:00 [queued]>
+[2025-02-11T17:13:29.829+0000] {taskinstance.py:2303} INFO - Starting attempt 2 of 2
+[2025-02-11T17:13:29.863+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_task> on 2025-02-11 17:08:00.921612+00:00
+[2025-02-11T17:13:29.880+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2872) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-11T17:13:29.884+0000] {standard_task_runner.py:63} INFO - Started process 2874 to run task
+[2025-02-11T17:13:29.882+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_INETUM_ETL', 'load_data_task', 'manual__2025-02-11T17:08:00.921612+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpfzc1hr51']
+[2025-02-11T17:13:29.887+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask load_data_task
+[2025-02-11T17:13:29.994+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_INETUM_ETL.load_data_task manual__2025-02-11T17:08:00.921612+00:00 [running]> on host 9a237c96c334
+[2025-02-11T17:13:30.220+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_INETUM_ETL' AIRFLOW_CTX_TASK_ID='load_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-11T17:08:00.921612+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-11T17:08:00.921612+00:00'
+[2025-02-11T17:13:30.224+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-11T17:13:30.226+0000] {dag_etl.py:90} ERROR - Error en la funcion save_to_df: El archivo /tmp/archivo.json no existe.
+[2025-02-11T17:13:30.228+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-11T17:13:30.229+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_etl.py", line 91, in upload_to_s3
+    raise e
+  File "/opt/airflow/dags/dag_etl.py", line 78, in upload_to_s3
+    raise FileNotFoundError(f"El archivo {TEMP_FILE} no existe.")
+FileNotFoundError: El archivo /tmp/archivo.json no existe.
+[2025-02-11T17:13:30.253+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=DAG_INETUM_ETL, task_id=load_data_task, execution_date=20250211T170800, start_date=20250211T171329, end_date=20250211T171330
+[2025-02-11T17:13:30.281+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 33 for task load_data_task (El archivo /tmp/archivo.json no existe.; 2874)
+[2025-02-11T17:13:30.303+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-02-11T17:13:30.370+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-11T17:13:30.381+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

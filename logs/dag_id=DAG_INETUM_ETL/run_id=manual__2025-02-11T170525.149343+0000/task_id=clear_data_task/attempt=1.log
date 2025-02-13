@@ -1,0 +1,21 @@
+[2025-02-11T17:11:04.552+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-02-11T17:11:04.592+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.clear_data_task manual__2025-02-11T17:05:25.149343+00:00 [queued]>
+[2025-02-11T17:11:04.611+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_INETUM_ETL.clear_data_task manual__2025-02-11T17:05:25.149343+00:00 [queued]>
+[2025-02-11T17:11:04.612+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-02-11T17:11:04.638+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): clear_data_task> on 2025-02-11 17:05:25.149343+00:00
+[2025-02-11T17:11:04.652+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2833) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-11T17:11:04.656+0000] {standard_task_runner.py:63} INFO - Started process 2842 to run task
+[2025-02-11T17:11:04.659+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_INETUM_ETL', 'clear_data_task', 'manual__2025-02-11T17:05:25.149343+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp5p5ivt8m']
+[2025-02-11T17:11:04.661+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask clear_data_task
+[2025-02-11T17:11:04.755+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_INETUM_ETL.clear_data_task manual__2025-02-11T17:05:25.149343+00:00 [running]> on host 9a237c96c334
+[2025-02-11T17:11:04.939+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Andres Urrea' AIRFLOW_CTX_DAG_ID='DAG_INETUM_ETL' AIRFLOW_CTX_TASK_ID='clear_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-11T17:05:25.149343+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-11T17:05:25.149343+00:00'
+[2025-02-11T17:11:04.945+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-02-11T17:11:04.948+0000] {dag_etl.py:97} INFO - El archivo temporal /tmp/archivo.json eliminado correctamente.
+[2025-02-11T17:11:04.949+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-02-11T17:11:04.950+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-02-11T17:11:04.968+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=DAG_INETUM_ETL, task_id=clear_data_task, execution_date=20250211T170525, start_date=20250211T171104, end_date=20250211T171104
+[2025-02-11T17:11:05.034+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-02-11T17:11:05.071+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-11T17:11:05.075+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
